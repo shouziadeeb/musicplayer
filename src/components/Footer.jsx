@@ -16,22 +16,22 @@ function Footer() {
   const songArray = [
     {
       name: "Happy Birthday",
-      link: "public/music/Happy_birthday__Instrumental___Happy_Birthday_Song___DK_MUSIC__(256k).mp3",
+      link: "music/Happy_birthday__Instrumental___Happy_Birthday_Song___DK_MUSIC__(256k).mp3",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmYU2RNmmxDsFuZIlmKInfhSysIveWA8UtjA&s",
     },
     {
       name: "Kabir Singh",
-      link: "public/music/KABIR_SINGH_mass_Full_BGM_(_without_remake_)(256k).mp3",
+      link: "music/KABIR_SINGH_mass_Full_BGM_(_without_remake_)(256k).mp3",
       img: "https://upload.wikimedia.org/wikipedia/en/d/dc/Kabir_Singh.jpg",
     },
     {
       name: "War",
-      link: "public/music/War_Theme_(_BGM_)_Ringtone_2019_(256k).mp3",
+      link: "music/War_Theme_(_BGM_)_Ringtone_2019_(256k).mp3",
       img: "https://m.media-amazon.com/images/M/MV5BZGI0ZGQ3MTQtYjllYy00MTkyLTg4ZWUtOTc1MmI2ZDE4OTYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     },
     {
       name: "Saho",
-      link: "public/music/Saaho_BGM(128k).mp3",
+      link: "music/Saaho_BGM(128k).mp3",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf6mf9qqlrr07gM2uL7lSXG3ZevP-rbSUCrg&s",
     },
   ];
