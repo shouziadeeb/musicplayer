@@ -127,7 +127,6 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="currntSong">
-        <p>Go to HELL</p>
         <img
           style={{ animation: isMusicPlay && "rotation 2.5s infinite linear" }}
           src={songArray[currentSong].img}
