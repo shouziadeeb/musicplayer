@@ -1,71 +1,77 @@
 import React from "react";
-import { FaHome } from "react-icons/fa";
-import { IoSearch } from "react-icons/io5";
+import { FaHome, FaSearch, FaMusic, FaHeart, FaPlus } from "react-icons/fa";
+import { useMusicPlayer } from "../context/MusicPlayerContext";
 
-function Sidebar({ setIsSearch, isSearch }) {
-  const list = [
-    {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
-    },
-    {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
-    },
-    {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
-    },
-    {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
-    },
+function Sidebar() {
+  const { state, dispatch } = useMusicPlayer();
+
+  const playlists = [
+    { id: 1, name: 'My Playlist #1' },
+    { id: 2, name: 'My Playlist #2' },
+    { id: 3, name: 'My Playlist #3' },
+    { id: 4, name: 'My Playlist #4' },
   ];
+
+  const handlePlaylistClick = (playlistId) => {
+    const firstSong = state.playlist[0];
+    if (firstSong) {
+      dispatch({ type: 'SET_CURRENT_SONG', payload: firstSong });
+      dispatch({ type: 'TOGGLE_PLAY' });
+    }
+  };
+
+  const handleLikedSongsClick = () => {
+    const likedSong = state.playlist[1];
+    if (likedSong) {
+      dispatch({ type: 'SET_CURRENT_SONG', payload: likedSong });
+      dispatch({ type: 'TOGGLE_PLAY' });
+    }
+  };
+
   return (
     <div className="sidebar">
       <div className="homeAndSearch">
-        <div
-          className="home"
-          onClick={() => {
-            setIsSearch(false);
-          }}
-        >
-          <i className="">
-            <FaHome />
-          </i>
-          <p>Home</p>
+        <div className="home">
+          <FaHome />
+          <span>Home</span>
         </div>
-        <div
-          className="search"
-          onClick={() => {
-            setIsSearch(true);
-            console.log(isSearch);
-          }}
-        >
-          <i className="">
-            <IoSearch />
-          </i>
-          <p>Search</p>
+        <div className="search">
+          <FaSearch />
+          <span>Search</span>
         </div>
       </div>
+
       <div className="second-sidebar">
-        <div className="playlist">
-          <i className="fa-solid fa-music"></i>
-          <h3>My Playlist</h3>
+        <div className="library-header">
+          <div className="library-title">
+            <FaMusic />
+            <span>Your Library</span>
+          </div>
+          <button className="add-playlist-btn">
+            <FaPlus />
+          </button>
         </div>
-        <div className="recommended-song-box">
-          {list.map((item, i) => (
-            <div className="recently_played" key={i}>
-              <img src={item.img} alt="Alan Walker" />
-              <h5>{item.name}</h5>
-              <h6>{item.artist}</h6>
+
+        <div className="playlists">
+          <div className="playlist" onClick={handleLikedSongsClick}>
+            <FaHeart />
+            <span>Liked Songs</span>
+          </div>
+          {playlists.map((playlist) => (
+            <div 
+              key={playlist.id} 
+              className="playlist"
+              onClick={() => handlePlaylistClick(playlist.id)}
+            >
+              <FaMusic />
+              <span>{playlist.name}</span>
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="attribution">
+        <p>Music by Bensound.com</p>
       </div>
     </div>
   );
