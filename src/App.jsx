@@ -1,8 +1,9 @@
 import React from 'react';
 import { MusicPlayerProvider } from './context/MusicPlayerContext';
-import Sidebar from './components/Sidebar';
-import MainContent from './components/MainContent';
-import AudioPlayer from './components/AudioPlayer';
+import Sidebar from "./components/Sidebar.jsx";
+
+import MainContent from './components/MainContent.jsx';
+import AudioPlayer from './components/AudioPlayer.jsx';
 import './index.css';
 
 function App() {
