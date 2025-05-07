@@ -1,36 +1,23 @@
-import React, { useState } from "react";
-import { IoMdSearch } from "react-icons/io";
+import React from 'react';
+import { FaChevronLeft, FaChevronRight, FaUser } from 'react-icons/fa';
 
-function Header({ isSearch }) {
-  const [inputValue, setInputValue] = useState("");
-  console.log(inputValue);
-  console.log(isSearch);
+function Header() {
   return (
-    <header className="header">
-      <div className="rightHeader">
-        {/* header image  */}
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNbyRJ2hvTs2aHQapCeTZxUyo-7p2syxEK-g&s"
-          className="LoginImgBtn"
-          alt="User Profile"
-        />
-        <div
-          className="searchBaarDiv"
-          style={{ display: isSearch ? "flex" : "none" }}
-        >
-          <input
-            type="search"
-            className="inputBox"
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder="What do you want to play?"
-            value={inputValue}
-          />
-          <i className="search_icon">
-            <IoMdSearch />
-          </i>
-        </div>
+    <div className="header">
+      <div className="left-header">
+        <button>
+          <FaChevronLeft />
+        </button>
+        <button>
+          <FaChevronRight />
+        </button>
       </div>
-    </header>
+      <div className="rightHeader">
+        <button className="LoginImgBtn">
+          <FaUser />
+        </button>
+      </div>
+    </div>
   );
 }
 

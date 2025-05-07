@@ -1,51 +1,58 @@
 import React from "react";
 
 function PopularAlbums() {
-  const list = [
+  const albums = [
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 1,
+      title: "÷ (Divide)",
+      artist: "Ed Sheeran",
+      image: "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96",
+      year: "2017",
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 2,
+      title: "After Hours",
+      artist: "The Weeknd",
+      image: "https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36",
+      year: "2020",
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 3,
+      title: "Midnights",
+      artist: "Taylor Swift",
+      image: "https://i.scdn.co/image/ab67616d0000b273bb54dde68cd23e2a268ae0f5",
+      year: "2022",
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 4,
+      title: "Scorpion",
+      artist: "Drake",
+      image: "https://i.scdn.co/image/ab67616d0000b273f907de96b9a4fbc04accc0d5",
+      year: "2018",
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
-    },
-    {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 5,
+      title: "Happier Than Ever",
+      artist: "Billie Eilish",
+      image: "https://i.scdn.co/image/ab67616d0000b2732a038d3bf875d23e4aeaa84e",
+      year: "2021",
     },
   ];
+
   return (
-    <div>
-      <h4 className="albumHadding">Popular Albums</h4>
+    <div className="popular-albums-section">
+      <h2 className="section-heading">Popular Albums</h2>
       <div className="popularAlbums">
-        {list.map((item, i) => (
-          <div className="singers" key={i}>
-            <img src={item.img} alt="Alan Walker Album" />
-            <h5>{item.name}</h5>
-            <h6>{item.artist}</h6>
+        {albums.map((album) => (
+          <div key={album.id} className="album-card">
+            <img src={album.image} alt={album.title} />
+            <div className="album-info">
+              <h5>{album.title}</h5>
+              <p>{album.artist}</p>
+              <span>{album.year}</span>
+            </div>
           </div>
         ))}
-
-        {/* Repeat similar blocks for other albums */}
       </div>
     </div>
   );

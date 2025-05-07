@@ -1,27 +1,19 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import SuggestedSongs from "./components/SuggestedSongs";
-import PopularArtists from "./components/PopularArtists";
-import PopularAlbums from "./components/PopularAlbums";
-import Footer from "./components/Footer";
-import "./index.css";
-import Sidebar from "./components/SideBar";
+import React from 'react';
+import { MusicPlayerProvider } from './context/MusicPlayerContext';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
+import AudioPlayer from './components/AudioPlayer';
+import './index.css';
 
 function App() {
-  const [isSearch, setIsSearch] = useState(false);
   return (
-    <div className="container">
-      <Sidebar setIsSearch={setIsSearch} isSearch={isSearch} />
-      <main className="box">
-        <Header isSearch={isSearch} />
-        <SearchBar />
-        <SuggestedSongs />
-        <PopularArtists />
-        <PopularAlbums />
-      </main>
-      <Footer />
-    </div>
+    <MusicPlayerProvider>
+      <div className="container">
+        <Sidebar />
+        <MainContent />
+        <AudioPlayer />
+      </div>
+    </MusicPlayerProvider>
   );
 }
 

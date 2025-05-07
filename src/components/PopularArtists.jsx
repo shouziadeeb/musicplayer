@@ -1,52 +1,58 @@
 import React from "react";
 
 function PopularArtists() {
-  const list = [
+  const artists = [
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 1,
+      name: "Ed Sheeran",
+      image: "https://i.scdn.co/image/ab6761610000e5ebda5d5a1f2c2a0d1a29f0d6b5",
+      followers: "85.5M"
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 2,
+      name: "The Weeknd",
+      image: "https://i.scdn.co/image/ab6761610000e5ebc02d416c309a68b04dc94576",
+      followers: "45.2M"
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 3,
+      name: "Taylor Swift",
+      image: "https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9",
+      followers: "92.1M"
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 4,
+      name: "Drake",
+      image: "https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9",
+      followers: "65.8M"
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 5,
+      name: "Billie Eilish",
+      image: "https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf",
+      genre: "Pop",
     },
     {
-      img: "https://wallpapercat.com/w/full/8/c/0/42729-1080x1920-phone-1080p-alan-walker-background.jpg",
-      name: "Alan Walker",
-      artist: "Artist",
+      id: 6,
+      name: "Ed Sheeran",
+      image: "https://i.scdn.co/image/ab6761610000e5ebc02d416c309a68b04dc94576",
+      genre: "Pop",
     },
   ];
+
   return (
-    <div>
-      <h4 className="albumHadding">Popular Artists</h4>
+    <div className="popular-artists-section">
+      <h2 className="section-heading">Popular Artists</h2>
       <div className="popularArtists">
-        {/* Map through your artist data */}
-        {list.map((item, i) => (
-          <div className="singers" key={i}>
-            <img src={item.img} alt="Alan Walker" />
-            <h5>{item.name}</h5>
-            <h6>{item.artist}</h6>
+        {artists.map((artist) => (
+          <div key={artist.id} className="artist-card">
+            <img src={artist.image} alt={artist.name} />
+            <div className="artist-info">
+              <h5>{artist.name}</h5>
+              <p>{artist.followers} followers</p>
+            </div>
           </div>
         ))}
-
-        {/* Repeat similar blocks for other artists */}
       </div>
     </div>
   );
